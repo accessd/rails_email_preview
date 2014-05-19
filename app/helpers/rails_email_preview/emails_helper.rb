@@ -7,12 +7,12 @@ module RailsEmailPreview::EmailsHelper
   end
 
   def change_locale_attr(locale)
-    {href:  rails_email_preview.rep_email_url(params.merge(part_type: @part_type, email_locale: locale)),
+    {href: rep_email_url(params.merge(part_type: @part_type, email_locale: locale)),
      class: rep_btn_class(@email_locale == locale.to_s)}
   end
 
   def change_format_attr(mime)
-    {href: rails_email_preview.rep_email_url(params.merge(part_type: mime)),
+    {href: rep_email_url(params.merge(part_type: mime)),
      class: rep_btn_class(@part_type == mime)}
   end
 

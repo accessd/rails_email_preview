@@ -7,7 +7,7 @@ div class=rep_row_class
         h2 = previews[0].group_name
         div class=rep_style[:list_group_class]
           - previews.each do |p|
-            a class=rep_style[:list_group_item_class] href=rails_email_preview.rep_email_url(preview_id: p.id, email_locale: @email_locale)
+            a class=rep_style[:list_group_item_class] href=rep_email_url(preview_id: p.id, email_locale: @email_locale)
               = p.method_name
 
 hr

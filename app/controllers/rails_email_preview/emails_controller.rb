@@ -31,7 +31,7 @@ class RailsEmailPreview::EmailsController < ::RailsEmailPreview::ApplicationCont
   end
 
   def test_deliver
-    redirect_url = rails_email_preview.rep_email_url(params.slice(:preview_id, :email_locale))
+    redirect_url = rep_email_url(params.slice(:preview_id, :email_locale))
     if (address = params[:recipient_email]).blank? || address !~ /@/
       redirect_to redirect_url, alert: t('rep.test_deliver.provide_email')
       return
